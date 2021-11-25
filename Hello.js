@@ -1,7 +1,7 @@
-let express = require("express");
-let app = express();
+const express = require("express");
+const app = express();
 
-app.get('/', function (req, res) {
+app.get("/", function (req, res) {
   res.end("Hello World!");
 });
 
