@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - nodejs_linter_job
+      - nodejs_test_job
 jobs:
   linter-execution:
    runs-on: ubuntu-latest
