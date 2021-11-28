@@ -5,6 +5,7 @@ on:
       - nodejs_linter_job
       - nodejs_jest_job
       - nodejs_nodeversions_job
+      - nodejs_environment_job
 jobs:
   linter-execution:
    runs-on: ubuntu-latest
@@ -26,7 +27,7 @@ jobs:
      matrix:
        node: [ '10', '12' ]
    name: Node ${{ matrix.node }}
-   if: github.ref == 'refs/heads/nodejs_nodeversions_job'
+   if: github.ref == 'refs/heads/nodejs_environment_job'
    steps:
      - name: Checkout code
        uses: actions/checkout@v2
@@ -36,3 +37,12 @@ jobs:
          node-version: ${{ matrix.node }}
      - name: Run jest tests
        run: npm install jest && npm test
+  environment_test_execution:
+   runs-on: ubuntu-latest
+   env:
+      DESTINATION_PERSON: 2DAW
+   steps:
+     - name: Hello 2DAW
+       uses: actions/github-actions-hello@v1
+       with:
+         who-to-greet: 'Hello $DESTINATION_PERSON'
