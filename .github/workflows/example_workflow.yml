@@ -27,4 +27,4 @@ jobs:
           domain: 'santisl5_test_react_app.surge.sh'
           project: '.'
           login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_password }}
+          token: ${{ secrets.surge_token }}
