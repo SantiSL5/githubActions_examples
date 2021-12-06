@@ -1,0 +1,15 @@
+name: send_telegram_workflow
+on: [push]
+jobs:
+  envio_mensaje:
+    runs-on: ubuntu-latest
+    name: Message
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Telegram bot action
+        uses: ./.github/actions/TelegramBotAction
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          USERNAME: 'Santi'

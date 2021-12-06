@@ -1,0 +1,5 @@
+name: 'Telegram Bot Action'
+description: 'Executes index.js'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
