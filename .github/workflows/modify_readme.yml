@@ -1,0 +1,29 @@
+name: modify_readme
+on: [push]
+jobs:
+  test-execution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run jest
+        run: npm install jest && npm test
+  
+  generate-readme:
+    needs: test-execution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Readme meme action
+        uses: ./.github/actions/readmeMemeAction
+        env:
+          TEST_RESULT: ${{ needs.test-execution.result }}
+      - name: Commit meme
+        run: |
+          git config --global user.email "meme@meme.meme"
+          git config --global user.name "Meme"
+          git add .
+          git commit -m "Meme readme"
+          git push origin github_action_readme
+  

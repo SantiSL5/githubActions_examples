@@ -1,0 +1,15 @@
+name: 'Readme meme action'
+description: 'Executes index.js'
+inputs:
+  frase_positiva:
+    description: 'Positive'
+    required: true
+  frase_negativa:
+    description: 'Negative'
+    required: true
+  resultado_tests:
+    description: 'Result'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

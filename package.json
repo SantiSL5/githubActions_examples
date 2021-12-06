@@ -1,15 +1,22 @@
 {
-  "name": "helloworld",
+  "name": "santi_workflow_inicial",
   "version": "1.0.0",
-  "description": "hello",
-  "main": "Hello.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Hello.js"
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiSL5/githubActions_examples.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SantiSL5/githubActions_examples/issues"
+  },
+  "homepage": "https://github.com/SantiSL5/githubActions_examples#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "@actions/core": "^1.6.0"
   }
 }
